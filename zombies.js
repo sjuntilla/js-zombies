@@ -7,7 +7,7 @@
  * @param {string} name     The item's name.
  * @property {string} name
  */
-function Item(name) {
+var Item = function (name) {
   this.name = name;
 }
 
@@ -32,7 +32,7 @@ function Item(name) {
  * -----------------------------
  */
 
-function Weapon(name, damage) {
+var Weapon = function (name, damage) {
   Item.call(this, name);
   this.damage = damage;
 }
@@ -61,7 +61,7 @@ Weapon.prototype.constructor = Weapon;
  * -----------------------------
  */
 
-function Food(name, energy) {
+var Food = function (name, energy) {
   Item.call(this, name);
   this.energy = energy;
 }
@@ -90,7 +90,7 @@ Food.prototype.constructor = Item;
  * @property {method} getPack              Returns private variable `pack`.
  * @property {method} getMaxHealth         Returns private variable `maxHealth`.
  */
-function Player(name, health, strength, speed, isAlive, equipped, pack, maxHealth) {
+var Player = function (name, health, strength, speed, isAlive, equipped, pack, maxHealth) {
   this.name = name;
   this.health = health;
   this.strength = strength;
@@ -331,7 +331,7 @@ function Player(name, health, strength, speed, isAlive, equipped, pack, maxHealt
  */
 
 
-function Zombie(health, strength, speed) {
+var Zombie = function (health, strength, speed) {
   this.health = health;
   this.strength = strength;
   this.speed = speed;
@@ -359,7 +359,7 @@ function Zombie(health, strength, speed) {
  * -----------------------------
  */
 
-function FastZombie(health, strength, speed) {
+var FastZombie = function (health, strength, speed) {
   Zombie.call(this, health, strength, speed);
 };
 FastZombie.prototype = Object.create(Zombie.prototype);
@@ -385,7 +385,7 @@ FastZombie.prototype = Object.create(Zombie.prototype);
  * -----------------------------
  */
 
-function StrongZombie(health, strength, speed) {
+var StrongZombie = function (health, strength, speed) {
   Zombie.call(this, health, strength, speed);
 };
 StrongZombie.prototype = Object.create(Zombie.prototype);
@@ -411,7 +411,7 @@ StrongZombie.prototype = Object.create(Zombie.prototype);
  * -----------------------------
  */
 
-function RangedZombie(health, strength, speed) {
+var RangedZombie = function (health, strength, speed) {
   Zombie.call(this, health, strength, speed);
 };
 RangedZombie.prototype = Object.create(Zombie.prototype);
@@ -437,7 +437,7 @@ RangedZombie.prototype = Object.create(Zombie.prototype);
  * -----------------------------
  */
 
-function ExplodingZombie(health, strength, speed) {
+var ExplodingZombie = function (health, strength, speed) {
   Zombie.call(this, health, strength, speed);
 };
 ExplodingZombie.prototype = Object.create(Zombie.prototype);
